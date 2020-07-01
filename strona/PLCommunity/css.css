@@ -1,0 +1,194 @@
+#container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    visibility: hidden;
+    display: none;
+    background-color: rgba(22,22,22,0.5); /* complimenting your modal colors */
+}
+#container:target {
+    visibility: visible;
+    display: block;
+}
+.reveal-modal {
+    position: relative;
+    margin: 0 auto;
+    top: 25%;
+}
+    /* Remove the left: 50% */
+
+body {color: White;
+background-color: #000000;
+}
+
+      #blok {
+        position:relative;
+        width:500px;
+        height:2.2em;
+        line-height:2.2em;
+        margin:0 auto;
+        border:3px solid #Black;
+        font-size:2.5em;
+        background-color:Black;
+        overflow:hidden;
+      }
+
+      #blok > p {
+        position:absolute;
+        margin:0;
+        white-space:nowrap;
+        animation:przesun 30s linear infinite;
+        -webkit-animation:przesun 30s linear infinite; /* dla Google Chrome, Safari, Opera 15+ */
+      }
+
+
+      }
+      
+      /* ------------ANIMACJA-PRZESUN------------ */
+      @keyframes przesun
+      {
+        0% { transform:translateX(0); padding-left:110%; }
+        100% { transform:translateX(-100%); padding-left:110%; }
+      }
+
+      @-webkit-keyframes przesun /* dla Google Chrome, Safari, Opera 15+ */
+      {
+        0% { -webkit-transform:translateX(0); padding-left:110%; }
+        100% { -webkit-transform:translateX(-100%); padding-left:110%; }
+      }
+
+
+     
+      /* ------------------------CZĘŚĆ-GÓRNA-MENU------------------------ */
+
+      /* wygląd głównego elementu - ol */
+      ol {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+        background-color:#FFFFFF;
+        font-size:18px;
+        height:2em;
+        line-height:2em;
+        text-align:center;
+      }
+
+      /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
+      ol a {
+        display:block;
+        text-decoration:none;
+        color: White;
+        padding:0 5px;
+      }
+
+      /* wygląd elementów - li - wszystkich dzieci elementu - ol */
+      ol > li {
+        float:left;
+        width:157px;
+        margin-left:1px;
+        background-color: Black;
+        height:2em;
+      }
+
+      /* wygląd elementu - li - pierwszego dziecka elementu - ol */
+      ol > li:first-child {
+        margin-left:0;
+      }
+
+      /* wygląd elementów - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover {
+        background-color: Black;
+      }
+
+      /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover > a {
+        color:White;
+      }
+
+      /* wygląd elementu - ul - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+      ol > li:hover > ul {
+        display:block;
+      }
+
+      /* ------------------------CZĘŚĆ-ROZWIJANA-MENU------------------------ */
+
+      /* wygląd głównych rozwijanych elementów - ul */
+      ol > li > ul {
+        display:none;
+        list-style-type:none;
+        padding:0;
+        margin:0;
+      }
+
+      /* wygląd elementu - li - w części rozwijanej */
+      ol > li > ul > li {
+        position:relative;
+        background-color: Black;
+      }
+
+      /* wygląd elementu - a - w części rozwijanej */
+      ol > li > ul > li > a {
+        border-top:1px solid #FFF;
+      }
+
+      /* wygląd elementu - li - w części rozwijanej, po najechaniu kursorem myszki na dany element - li */
+      ol > li > ul > li:hover {
+        background-color: Black;
+      }
+
+      /* wygląd elementu - a - w części rozwijanej, po najechaniu kursorem myszki na element - li */
+      ol > li > ul > li:hover > a {
+        color: White;
+      }
+
+      #pisanie {
+        position:relative;
+        float:left;
+        font-size:1.8em;
+        font-family:"Courier New", monospace;
+        background-color:Black;
+      }
+
+      #pisanie > span {
+        position:absolute;
+        top:0;
+        right:0;
+        height:100%;
+        background-color: Black;
+        border-left:1px solid transparent;
+        animation:pisz 10s steps(25,start) , znak 1s step-end infinite;
+        -webkit-animation:pisz 10steps(25,start) , znak 1s step-end infinite; /* dla Google Chrome, Safari, Opera 15+ */
+      }
+
+      #pisanie > p:hover {
+        animation-play-state:paused;
+      }
+      
+      /* ------------ANIMACJE------------ */
+      @keyframes pisz
+      {
+        0% { width:100%; }
+        100% { width:0; }
+      }
+
+      @keyframes znak
+      {
+        0% { border-left-color:transparent; }
+        50% { border-left-color:black; }
+        100% { border-left-color:transparent; }
+      }
+
+      /* dla Google Chrome, Safari, Opera 15+ */
+      @-webkit-keyframes pisz
+      {
+        0% { width:100%; }
+        100% { width:0; }
+      }
+
+      @-webkit-keyframes znak
+      {
+        0% { border-left-color:transparent; }
+        50% { border-left-color:black; }
+        100% { border-left-color:transparent; }
+      }
